@@ -14,7 +14,7 @@ function check_dep {
     exit 1
   fi
 
-  if ! [ -f "${HOME}/.pks/creds.yml" ]; then
+  if ! [ -f "${HOME}/.pks/creds.yml" -o -f "${PKS_HOME}/creds.yml" ]; then
     echo -e "\n${red}Error: Login to PKS API before proceeding${reset}" >&2
     exit 1
   fi
